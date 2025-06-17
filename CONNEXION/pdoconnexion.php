@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) { // Vérifie si le formulaire a été soumis
             $sql = 'SELECT * FROM users WHERE email = ?'; // Prépare la requête SQL
             $result = $bdd->prepare($sql); // Prépare la requête
             $result->execute([$email]); // Exécute la requête avec l'email
-            $data = $data->fetch(PDO::FETCH_ASSOC); // Récupère les données
+            $data = $result->fetch(PDO::FETCH_ASSOC); // Récupère les données
 
             if (!$data) { // Si aucun utilisateur n'est trouvé
                 $_SESSION['error'] = "Email incorrect ou non trouvé."; // Message d'erreur
