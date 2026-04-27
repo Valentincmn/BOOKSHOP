@@ -25,7 +25,7 @@
         <div class="nav-r">
             <button id="deconnexion">DECONNEXION</button>
             <a href="../COMPTE/Informationcompte.php"><button id="compte">COMPTE</button></a>
-            <button id="livre">MES LIVRES</button>
+            <a href="../MESLIVRES/mes_livres.php"><button id="livre">MES LIVRES</button></a>
         </div>
     </div>
 
@@ -39,7 +39,7 @@
     <div id="results"></div>
 
     <!-- Scripts JavaScript -->
-    <script src="../scripts/Searchbook.js"></script>
+    <script src="../scripts/Searchbook.js?v=<?php echo time(); ?>"></script>
     <script>
         // Gestion du bouton déconnexion
         document.getElementById('deconnexion').addEventListener('click', function() {

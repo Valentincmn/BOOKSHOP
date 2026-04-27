@@ -10,7 +10,7 @@ $email = $_SESSION['email'];
 
 // Ajout de la vérification de session et préparation de la requête
 if (!isset($_SESSION['email'])) {
-    header('Location: login.php');
+    header('Location: ../CONNEXION/login.php');
     exit();
 }
 
@@ -48,7 +48,7 @@ if (!$user) {
         <div class="nav-r">
             <button id="deconnexion">DECONNEXION</button>
             <a href="Informationcompte.php"><button id="compte">COMPTE</button></a>
-            <button id="livre">MES LIVRES</button>
+            <a href="../MESLIVRES/mes_livres.php"><button id="livre">MES LIVRES</button></a>
         </div>
     </div>
 

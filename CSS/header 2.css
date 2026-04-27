@@ -155,5 +155,34 @@ input[type="text"]:hover, input[type="text"]:focus {
     font-size: 14px;
 }
 
+.book button {
+    margin-top: 15px;
+    padding: 8px 14px;
+}
+
+.page-title {
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.page-title h1 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.page-title p {
+    margin-bottom: 24px;
+    color: #555;
+    font-size: small;
+}
+
+.page-title a {
+    text-decoration: none;
+}
+
     
 

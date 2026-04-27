@@ -2,6 +2,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Clé API Google Books
     const apiKey = 'AIzaSyCDlaD9oLECRLbK6CD26W7hkkqDf9oAV7s'; 
+    const savedBooksKey = 'mesLivres';
+
+    function getSavedBooks() {
+        return JSON.parse(localStorage.getItem(savedBooksKey)) || [];
+    }
+
+    function saveBook(book) {
+        const savedBooks = getSavedBooks();
+        const alreadySaved = savedBooks.some(savedBook => savedBook.id === book.id);
+
+        if (!alreadySaved) {
+            savedBooks.push(book);
+            localStorage.setItem(savedBooksKey, JSON.stringify(savedBooks));
+        }
+    }
 
     // Écouteur d'événement sur le bouton de recherche
     document.getElementById('searchButton').addEventListener('click', function() {
@@ -23,6 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const bookElement = document.createElement('div');
                     // Gérer l'image de couverture (avec image par défaut si non disponible)
                     const thumbnail = book.imageLinks ? book.imageLinks.thumbnail : 'placeholder.jpg';
+                    const savedBook = {
+                        id: item.id,
+                        title: book.title,
+                        authors: book.authors ? book.authors.join(', ') : 'N/A',
+                        thumbnail: thumbnail
+                    };
                     
                     // Créer l'élément HTML pour le livre
                     bookElement.classList.add('book');
@@ -30,7 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="${thumbnail}" alt="Couverture du livre">
                         <h2>${book.title}</h2>
                         <p>Auteur(s): ${book.authors ? book.authors.join(', ') : 'N/A'}</p>
+                        <button class="add-book">AJOUTER A MES LIVRES</button>
                     `;
+
+                    bookElement.querySelector('.add-book').addEventListener('click', function() {
+                        saveBook(savedBook);
+                        this.textContent = 'AJOUTE';
+                    });
                     
                     // Ajouter le livre à la liste des résultats
                     resultsDiv.appendChild(bookElement);
