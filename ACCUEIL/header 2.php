@@ -39,7 +39,7 @@
     <div id="results"></div>
 
     <!-- Scripts JavaScript -->
-    <script src="/TP Librairie PHP/scripts/Searchbook.js"></script>
+    <script src="../scripts/Searchbook.js"></script>
     <script>
         // Gestion du bouton déconnexion
         document.getElementById('deconnexion').addEventListener('click', function() {

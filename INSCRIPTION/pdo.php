@@ -2,11 +2,11 @@
 // Les informations de connexion à la base de données MySQL
 $servername = "localhost";    
 $username = "root";          
-$password = "root";          
+$password = "";          
 
 try {
-    // On crée une connexion à la base de données 'membre'
-    $bdd = new PDO("mysql:host=$servername;dbname=membre", $username, $password);
+    // On crée une connexion à la base de données 'Bookshop'
+    $bdd = new PDO("mysql:host=$servername;dbname=Bookshop", $username, $password);
     // On configure PDO pour qu'il affiche les erreurs
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     

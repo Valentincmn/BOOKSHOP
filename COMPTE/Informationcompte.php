@@ -3,7 +3,7 @@
 session_start();
 
 // Connexion simple à la base de données
-$bdd = new PDO("mysql:host=localhost;dbname=membre", "root", "root");
+$bdd = new PDO("mysql:host=localhost;dbname=Bookshop", "root", "");
 
 // Récupérer les informations de l'utilisateur connecté
 $email = $_SESSION['email'];

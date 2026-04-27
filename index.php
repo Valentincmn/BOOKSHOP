@@ -1,5 +1,5 @@
 <?php
-header('Location: CONNEXION/login.php');
+header('Location: ACCUEIL/header%202.php');
 exit();
 
 // 1 - Pouvoir chercher des livres (genre ou nom) via l'API google Books soit avec JS (fetch ou axios) soit cURL

@@ -4,9 +4,9 @@ session_start();
 
 // Configuration de la base de données
 $host = "localhost";
-$dbname = "membre";
+$dbname = "Bookshop";
 $username = "root";
-$password = "root";
+$password = "";
 
 // Vérifier si le formulaire a été soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

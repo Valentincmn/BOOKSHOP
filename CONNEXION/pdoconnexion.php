@@ -3,7 +3,7 @@ session_start(); // Démarre une session PHP
 
 $servername = "localhost"; // Nom du serveur
 $username = "root"; // Nom d'utilisateur de la base de données
-$password = "root"; // Mot de passe de la base de données
+$password = ""; // Mot de passe de la base de données
 
 if (isset($_POST['submit'])) { // Vérifie si le formulaire a été soumis
     $email = $_POST['email']; // Récupère l'email du formulaire
@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) { // Vérifie si le formulaire a été soumis
     } else {
         try {
             // Connexion à la base de données
-            $bdd = new PDO("mysql:host=$servername;dbname=membre", $username, $password);
+            $bdd = new PDO("mysql:host=$servername;dbname=Bookshop", $username, $password);
             $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
             $sql = 'SELECT * FROM users WHERE email = ?'; // Prépare la requête SQL
