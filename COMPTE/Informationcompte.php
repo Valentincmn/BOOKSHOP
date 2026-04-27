@@ -32,14 +32,14 @@ if (!$user) {
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon Compte</title>
-    <link rel="stylesheet" href="/TP Librairie PHP/CSS/header 2.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="/TP Librairie PHP/CSS/login.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="/TP Librairie PHP/CSS/register.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../CSS/header 2.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../CSS/login.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../CSS/register.css?v=<?php echo time(); ?>">
 </head>
 <body>
     <!-- Barre de navigation -->
     <div class="nav">
-        <a href="../Accueil/header 2.php">
+        <a href="../ACCUEIL/header 2.php">
             <span id="librai">LIBRAI</span>
             <span id="mid">/</span>
             <span id="book">BOOK</span>
