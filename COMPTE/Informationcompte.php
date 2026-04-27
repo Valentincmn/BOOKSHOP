@@ -5,14 +5,14 @@ session_start();
 // Connexion simple à la base de données
 $bdd = new PDO("mysql:host=localhost;dbname=Bookshop", "root", "");
 
-// Récupérer les informations de l'utilisateur connecté
-$email = $_SESSION['email'];
-
 // Ajout de la vérification de session et préparation de la requête
 if (!isset($_SESSION['email'])) {
     header('Location: ../CONNEXION/login.php');
     exit();
 }
+
+// Récupérer les informations de l'utilisateur connecté
+$email = $_SESSION['email'];
 
 // Utilisation d'une requête préparée pour plus de sécurité
 $requete = $bdd->prepare("SELECT * FROM users WHERE email = ?");
